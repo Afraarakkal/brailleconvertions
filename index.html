@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Braille & Braille to Text</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and page setup */
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Gradient background */
+            overflow: hidden;
+        }
+
+        /* Title Styling */
+        h1 {
+            color: white;
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Text shadow for contrast */
+            letter-spacing: 1px;
+        }
+
+        /* Container with stylish card effect */
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow around the card */
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Button Styling */
+        button {
+            padding: 20px 40px;
+            font-size: 18px;
+            background: linear-gradient(135deg, #42a5f5, #66bb6a); /* Gradient button */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin: 15px 0;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        button:hover {
+            transform: translateY(-5px); /* Button hover effect */
+            background-color: #2196f3; /* Darker blue when hovered */
+        }
+
+        button:active {
+            transform: translateY(2px); /* Slight press-down effect when clicked */
+        }
+
+        /* Add animations to the buttons */
+        button:nth-child(1) {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        button:nth-child(2) {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        /* Fade In Animations for buttons */
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Footer text */
+        footer {
+            position: fixed;
+            bottom: 10px;
+            color: white;
+            font-size: 14px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+            font-style: italic;
+        }
+        video {
+            position: fixed;  /* Fixes the video to the background */
+            top: 0;
+            left: 0;
+            width: 100vw;   /* Ensures the video covers the entire width */
+            height: 100vh;  /* Ensures the video covers the entire height */
+            object-fit: cover;  /* Makes sure the video covers the screen */
+            z-index: -1;  /* Places the video behind all other content */
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h1>Text to Braille & Braille to Text Converter</h1>
+    
+    <div class="container">
+        <h2>Choose Your Conversion</h2>
+        <button>Text to Braille</button>
+        <button>Braille to Text</button>
+    </div>
+
+    <footer>
+        &copy; 2025 Braille Converter. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
